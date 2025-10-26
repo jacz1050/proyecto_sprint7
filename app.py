@@ -4,7 +4,7 @@ import streamlit as st
 
 car_data = pd.read_csv('vehicles_us.csv')
 
-st.header('Análisis interactivo de anuncios de vehículos 🚗')
+st.header('graficas vehiculos')
 
 show_hist = st.checkbox('Mostrar histograma del odómetro')
 show_scatter = st.checkbox('Mostrar gráfico de dispersión: Precio vs Kilometraje')
