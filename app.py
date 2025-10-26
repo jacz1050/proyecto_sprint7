@@ -2,25 +2,13 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-# -------------------------------
-# Cargar el dataset
-# -------------------------------
 car_data = pd.read_csv('vehicles_us.csv')
 
-# -------------------------------
-# Encabezado de la aplicación
-# -------------------------------
 st.header('Análisis interactivo de anuncios de vehículos 🚗')
 
-# -------------------------------
-# Casillas de verificación para los gráficos
-# -------------------------------
 show_hist = st.checkbox('Mostrar histograma del odómetro')
 show_scatter = st.checkbox('Mostrar gráfico de dispersión: Precio vs Kilometraje')
 
-# -------------------------------
-# Histograma
-# -------------------------------
 if show_hist:
     st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
     fig_hist = go.Figure(data=[go.Histogram(x=car_data['odometer'])])
@@ -32,9 +20,6 @@ if show_hist:
     )
     st.plotly_chart(fig_hist, use_container_width=True)
 
-# -------------------------------
-# Scatter plot
-# -------------------------------
 if show_scatter:
     st.write('Creación de un gráfico de dispersión: Precio vs Kilometraje')
     fig_scatter = go.Figure(data=[go.Scatter(
